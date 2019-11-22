@@ -19,27 +19,27 @@ framework 文件可以直接使用。
 
 1. 创建framework
 
-![](/Users/letong/Desktop/MD/静态库framework/CreateFramework.png)
+![](./CreateFramework.png)
 
 创建后发现只有一个.h文件，这个文件类似.pch文件，是所有头文件的集合，将你要创建的类导入在这个.h文件里
 
 2. 设置public 文件
 
-![](/Users/letong/Desktop/MD/静态库framework/public.png)
+![](./public.png)
 
 设置你想要别人看到引用的对外.h文件
 
 3. 设置mach-Type，选择static（静态）
 
-![](/Users/letong/Desktop/MD/静态库framework/machType.png)
+![](./machType.png)
 
 4. 设置target支持的版本号iOS 9.0 以上等，配置支持armv7s,build active architecture only 设置为NO
 
-![](/Users/letong/Desktop/MD/静态库framework/architectures.png)
+![](./architectures.png)
 
 5. 运行模拟器，然后再运行真机，点击Products->show in find，会看到两个文件夹Debug-iphonesimulator和Debug-iphoneos。这是因为Framework模拟器和真机不同，需要去合并成一个
 
-![](/Users/letong/Desktop/MD/静态库framework/lipoCreate.png)
+![](./lipoCreate.png)
 
 ```
 lipo
@@ -57,12 +57,12 @@ libo -create
 
 1. 创建.a
 
-![](/Users/letong/Desktop/MD/静态库a/create.png)
+![](./create.png)
 
 创建后会生成一个.h 和 .m文件，（无用可删），去创建NSObject类对象
 
 2. 修改subpath,保持创建的文件和.a 文件在同一个文件夹下，其次再copyFiles下，导入需要暴露的.h文件
-![](/Users/letong/Desktop/MD/静态库a/subpath.png)
+![](./subpath.png)
 
 3. 与framework设置相同，设置mach-type，运行模拟器，合并.a文件
 
